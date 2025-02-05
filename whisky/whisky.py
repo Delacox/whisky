@@ -1,39 +1,27 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-
 import reflex as rx
-
 from rxconfig import config
+from whisky.styles.global_styles import global_style
+from whisky.styles.component_styles import component_styles
+from whisky.styles.theme import theme
+from whisky.pages.index import index
+from whisky.pages.login import login
+from whisky.pages.signup import signup
 
-
+# Estado de la aplicacion
 class State(rx.State):
     """The app state."""
 
     ...
 
 
-def index() -> rx.Component:
-    # Welcome Page (Index)
-    return rx.container(
-        rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text(
-                "Get started by editing ",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="5",
-            ),
-            rx.link(
-                rx.button("Check out our docs!"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
-                is_external=True,
-            ),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
-        ),
-        rx.logo(),
-    )
+# Combinar estilos
+all_styles = {
+    **global_style,
+    **component_styles,
+}
 
-
-app = rx.App()
-app.add_page(index)
+# Configuracion de la aplicacion
+app = rx.App(
+    style=all_styles,
+    theme=theme,
+)

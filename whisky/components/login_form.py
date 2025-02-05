@@ -4,12 +4,7 @@ def login_form() -> rx.Component:
     return rx.card(
         rx.vstack(
             rx.flex(
-                rx.image(
-                    src="/logo.jpg",
-                    width="2.5em",
-                    height="auto",
-                    border_radius="25%",
-                ),
+                
                 rx.heading(
                     "Sign in to your account",
                     size="6",

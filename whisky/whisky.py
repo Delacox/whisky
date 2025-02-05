@@ -22,6 +22,8 @@ all_styles = {
 
 # Configuracion de la aplicacion
 app = rx.App(
+    stylesheets=["https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"],
+    
     style=all_styles,
     theme=theme,
 )
